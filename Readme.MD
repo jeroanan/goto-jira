@@ -3,7 +3,7 @@
 Just a simple Chromium extension to allow you to quickly jump to a Jira ticket, given its number.
 
 ## Installation
-## From Source
+### From Source
 
 1. Checkout this repo
 2. In your Chromium based browser navigate to chrome://extensions
