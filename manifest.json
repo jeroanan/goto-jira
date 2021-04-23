@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Jira GOTO",
+  "version": "1.0",
+  "description": "Enter a Jira ticket number; goto that ticket",
+  "permissions": [
+    "storage"
+  ],
+  "action": { "default_popup": "issue.html" }
+}
