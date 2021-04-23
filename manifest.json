@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Jira GOTO",
+  "name": "GOTO-Jira",
   "version": "1.0",
   "description": "Enter a Jira ticket number; goto that ticket",
   "permissions": [
