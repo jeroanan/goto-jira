@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const showWarning = baseUrl==='';
       showElement(ge('setBaseUrlWarning'), showWarning);
-
     });
   };
 

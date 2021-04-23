@@ -1,0 +1,18 @@
+label {
+  font-weight: bold;
+}
+
+div {
+  padding-top: 1em;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+div.buttons {
+  text-align: right;
+}

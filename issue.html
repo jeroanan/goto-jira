@@ -1,18 +1,21 @@
 <html>
   <head>
-    <title>JIRA GOTO</title>
+    <title></title>
     <script src="goto.js"></script>
+    <link rel="StyleSheet" href="style.css" />
   </head>
   <body>
     <div>
       <form>
         <label for="issueNo">Ticket no:</label>
         <input type="text" id="issueNo" />
-        <button id="go" class="go-button">Go</button>
+        <div class="buttons">
+          <button id="go" class="go-button">Go</button>
+        </div>
         <div class="warning">
           <span id="setBaseUrlWarning">Set a base url in settings to get started</span>
         </div>
-        <div class="settings">
+        <div class="settings buttons">
           <a href="settings.html">Settings</a>
         </div>
       </form>
