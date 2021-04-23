@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     const n = issueNo.value.trim();
-    window.open(`${baseUrl}/${n}`, '_blank');
+    window.open(`${baseUrl}/browse/${n}`, '_blank');
 
   }, false);
 
