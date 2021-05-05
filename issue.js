@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const ge = id => document.getElementById(id);
 
-  const goButton = ge('go');
+  const goIssueButton = ge('go-issue');
   const issueNo = ge('issueNo');
 
   let baseUrl = '';
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const iNo = issueNo.value.trim();
 
       const disableButton = baseUrl==='' || iNo==='';
-      disableElement(goButton, disableButton);
+      disableElement(goIssueButton, disableButton);
 
       const showWarning = baseUrl==='';
       showElement(ge('setBaseUrlWarning'), showWarning);
     });
   };
 
-  goButton.addEventListener('click', e => {
+  goIssueButton.addEventListener('click', e => {
     e.preventDefault();
 
     const n = issueNo.value.trim();
