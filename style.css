@@ -8,6 +8,7 @@ body {
 
 label {
   font-weight: bold;
+  text-align: left;
 }
 
 div {
@@ -29,4 +30,8 @@ button.go-button {
 
 div.buttons {
   text-align: right;
+}
+
+input.main-textbox {
+  min-width: 230px;
 }

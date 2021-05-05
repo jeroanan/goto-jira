@@ -7,11 +7,20 @@
   <body>
     <div>
       <h1>Goto-Jira</h1>
-      <form>
+      <form class="main-form">
         <div>
           <label for="issueNo">Ticket no:</label>
-          <input type="text" id="issueNo" />
+        </div>
+        <div>
+          <input type="text" class="main-textbox" id="issueNo" />
           <button id="go-issue" class="go-button">Go</button>
+        </div>
+        <div>
+          <label for="projectCode">Project code:</label>
+        </div>
+        <div>
+          <input type="text" class="main-textbox" id="projectCode" />
+          <button id="go-project" class="go-button">Go</button>
         </div>
         <div class="warning">
           <span id="setBaseUrlWarning">Set a base url in settings to get started</span>

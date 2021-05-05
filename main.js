@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const goIssueButton = ge('go-issue');
   const issueNo = ge('issueNo');
 
+  const goProjectButton = ge('go-project');
+  const projectCode = ge('projectCode');
+
   let baseUrl = '';
 
   const getBaseUrl = cb => chrome.storage.sync.get(['base_url'], r => cb(r.base_url));
@@ -19,28 +22,62 @@ document.addEventListener('DOMContentLoaded', () => {
   const disableElement = (el, disabled) => toggleAttr(el, 'disabled', disabled);
   const showElement = (el, show) => toggleAttr(el, 'hidden', !show);
 
+  const getVal = el => el.value.trim();
+
   const refreshForm = () => {
     getBaseUrl(url => {
       baseUrl = url == undefined ? '' : url.trim();
-      const iNo = issueNo.value.trim();
+      
+      const iNo = getVal(issueNo);
+      const disableGoIssueButton = baseUrl==='' || iNo==='';
+      disableElement(goIssueButton, disableGoIssueButton);
 
-      const disableButton = baseUrl==='' || iNo==='';
-      disableElement(goIssueButton, disableButton);
+      const pCode = getVal(projectCode);
+      const disableGoProjectButton = baseUrl=='' || pCode==='';
+      disableElement(goProjectButton, disableGoProjectButton);
 
       const showWarning = baseUrl==='';
       showElement(ge('setBaseUrlWarning'), showWarning);
     });
   };
 
-  goIssueButton.addEventListener('click', e => {
+  const goIssueButtonClicked = e => {
     e.preventDefault();
 
-    const n = issueNo.value.trim();
+    const n = getVal(issueNo);
     window.open(`${baseUrl}/browse/${n}`, '_blank');
+  };
 
-  }, false);
+  const goProjectButtonClicked = e => {
+    e.preventDefault();
 
-  issueNo.addEventListener('keydown', e => refreshForm());
+    const pc = getVal(projectCode);
+    window.open(`${baseUrl}/secure/RapidBoard.jspa?projectKey=${pc}`, '_blank');
+  };
+
+  const checkEnterPressed = (e, button, onEnter) => {
+
+    if (e.keyCode===13 && !button.getAttribute('disabled')) {
+      onEnter(e);
+      return true;
+    }
+    return false;
+  };
+
+  const addTextBoxEventListener = (textBox, button, onEnter) => {
+
+    textBox.addEventListener('keydown', e => {
+      if (e.keyCode===13 && !button.getAttribute('disabled')) {
+        onEnter(e);
+        return;
+      }
+      refreshForm()
+    });
+  };
+
+  goIssueButton.addEventListener('click', e => goIssueButtonClicked(e), false);
+  addTextBoxEventListener(issueNo, goIssueButton, goIssueButtonClicked);
+  addTextBoxEventListener(projectCode, goProjectButton, goProjectButtonClicked);
 
   refreshForm();
 
