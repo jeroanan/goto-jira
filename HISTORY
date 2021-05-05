@@ -1,4 +1,9 @@
 2021-05-05
 
+f8c8f77: rename issue.html to main.html. This will necessitate reinstalling and reconfiguring this extension.
+8e94e43: rename issue.html to main.html. This will necessitate reinstalling and reconfiguring this extension.
+9d16bb0: Go button now sits to right of issue number
+9da0227: rename go button to go-issue
+3620a48: Add history file
 71554e8: Pressing enter on base url now saves it.
 ff34993: If no base url is defined don't show "undefined" in base url settings box
