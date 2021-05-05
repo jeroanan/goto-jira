@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     chrome.storage.sync.set({'base_url': baseUrl.value.trim()});
     goHome();
   });
-  chrome.storage.sync.get(['base_url'], r => baseUrl.value = r.base_url);
+
+  chrome.storage.sync.get(['base_url'], r => {
+    baseUrl.value = r.base_url===undefined ? '' :r.base_url;
+  });
 
 }, false);
 
