@@ -1,0 +1,4 @@
+2021-05-05
+
+71554e8: Pressing enter on base url now saves it.
+ff34993: If no base url is defined don't show "undefined" in base url settings box
