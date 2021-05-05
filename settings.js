@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const saveButton = ge('save');
   const baseUrl = ge('baseUrl');
 
-  const goHome = () => location.href = 'issue.html';
+  const goHome = () => location.href = 'main.html';
 
   const saveClicked = e => {
     e.preventDefault();
