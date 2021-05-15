@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const goProjectButtonClicked = e => {
     e.preventDefault();
 
-    const pc = getVal(projectCode);
+    const pc = getVal(projectCode).toUpperCase();
     window.open(`${baseUrl}/secure/RapidBoard.jspa?projectKey=${pc}`, '_blank');
   };
 
