@@ -1,7 +1,10 @@
+2021-05-15
+
+fb8e9e2: Make entered project code upper-case
+
 2021-05-05
 
 3ab61b1: Add go to project
-4b0e76b: update history
 f8c8f77: rename issue.html to main.html. This will necessitate reinstalling and reconfiguring this extension.
 8e94e43: rename issue.html to main.html. This will necessitate reinstalling and reconfiguring this extension.
 9d16bb0: Go button now sits to right of issue number
